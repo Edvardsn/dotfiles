@@ -3,6 +3,7 @@ Main config across all windows development.
 
 # Illustration
 
+```text
 Windows 11
 │
 ├── WezTerm
@@ -41,3 +42,5 @@ Windows 11
 └── Native GUI apps
     ├── JetBrains
     └── 1Password
+    ........
+```
