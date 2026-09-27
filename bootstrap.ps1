@@ -12,6 +12,7 @@ $packages = @(
     'JesseDuffield.lazygit'
     'Neovim.Neovim'
     'Starship.Starship'
+    'Fastfetch-cli.Fastfetch'
     'eza-community.eza'
     'BurntSushi.ripgrep.MSVC'
     'sharkdp.fd'
