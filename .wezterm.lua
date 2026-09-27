@@ -1,10 +1,10 @@
 -- Leader = Ctrl+Space, release, then key (within 1s). Custom shortcuts:
 -- Workspaces: s list/switch | n new | r rename | Shift+w close entire workspace (confirm name)
--- Layouts: Ctrl+s save current workspace | Ctrl+r restore saved layout (fresh shells, manual)
+-- Layouts: Shift+S save current workspace | Ctrl+r restore saved layout (fresh shells, manual)
 -- Panes: | split left/right | - split top/bottom | h/j/k/l focus | arrows resize by 5
 --        w close pane (confirm) | z zoom/unzoom | p visual pane picker
--- Tabs: t new | [ previous | Ctrl+] next | , rename
--- Output: ] copy mode; h/j/k/l move, v select, Shift+v select lines, y copy, q/Esc exit
+-- Tabs: t new | Ctrl+[ previous | Ctrl+] next | , rename
+-- Output: [ copy mode; h/j/k/l move, v select, Shift+v select lines, y copy, q/Esc exit
 -- Direct: Ctrl+c copy selection/interrupt | Ctrl+v paste. Other WezTerm defaults remain enabled.
 local wezterm = require 'wezterm'
 local act = wezterm.action
@@ -16,11 +16,20 @@ config.default_prog = {
 }
 config.hide_tab_bar_if_only_one_tab = false
 config.show_tab_index_in_tab_bar = true
+config.tab_bar_at_bottom = false
 
 wezterm.on('update-right-status', function(window, pane)
+  local pane_labels = {}
+  for index, tab_pane in ipairs(pane:tab():panes()) do
+    local label = tostring(index)
+    if tab_pane:pane_id() == pane:pane_id() then
+      label = '[' .. label .. ']'
+    end
+    table.insert(pane_labels, label)
+  end
   window:set_right_status(string.format(
-    ' Workspace: %s | Pane ID: %s ',
-    window:active_workspace(), pane:pane_id()
+    'SESSION %s  |  PANES %s  |  ID %s  ',
+    window:active_workspace(), table.concat(pane_labels, '  '), pane:pane_id()
   ))
 end)
 
@@ -72,8 +81,8 @@ config.keys = {
   { key = 'UpArrow', mods = 'LEADER', action = act.AdjustPaneSize { 'Up', 5 } },
   { key = 'DownArrow', mods = 'LEADER', action = act.AdjustPaneSize { 'Down', 5 } },
   { key = 't', mods = 'LEADER', action = act.SpawnTab 'CurrentPaneDomain' },
-  { key = '[', mods = 'LEADER', action = act.ActivateTabRelative(-1) },
-  { key = ']', mods = 'LEADER', action = act.ActivateCopyMode },
+  { key = '[', mods = 'LEADER|CTRL', action = act.ActivateTabRelative(-1) },
+  { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
   { key = ']', mods = 'LEADER|CTRL', action = act.ActivateTabRelative(1) },
   { key = ',', mods = 'LEADER', action = act.PromptInputLine {
     description = 'Rename current tab',
@@ -81,7 +90,7 @@ config.keys = {
       if name then pane:tab():set_title(name) end
     end),
   } },
-  { key = 's', mods = 'LEADER|CTRL', action = wezterm.action_callback(function(window)
+  { key = 'S', mods = 'LEADER', action = wezterm.action_callback(function(window)
     local ok, err = pcall(sessions.save, window)
     if not ok then window:toast_notification('Save failed', tostring(err), nil, 6000) end
   end) },
@@ -121,3 +130,4 @@ config.keys = {
   } },
 }
 return config
+
