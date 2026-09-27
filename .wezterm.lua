@@ -3,7 +3,7 @@
 -- Layouts: Shift+S save current workspace | Ctrl+r restore saved layout (fresh shells, manual)
 -- Panes: | split left/right | - split top/bottom | h/j/k/l focus | arrows resize by 5
 --        w close pane (confirm) | z zoom/unzoom | p visual pane picker
--- Tabs: t new | Ctrl+[ previous | Ctrl+] next | , rename
+-- Tabs: t new | Ctrl+[ previous | Ctrl+] next | , rename | 1-9 activate tabs 1-9
 -- Output: [ copy mode; h/j/k/l move, v select, Shift+v select lines, y copy, q/Esc exit
 -- Direct: Ctrl+c copy selection/interrupt | Ctrl+v paste. Other WezTerm defaults remain enabled.
 local wezterm = require 'wezterm'
@@ -129,5 +129,14 @@ config.keys = {
       end),
   } },
 }
+
+for index = 1, 9 do
+  table.insert(config.keys, {
+    key = tostring(index),
+    mods = 'LEADER',
+    action = act.ActivateTab(index - 1),
+  })
+end
+
 return config
 
