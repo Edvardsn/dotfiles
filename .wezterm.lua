@@ -41,6 +41,8 @@ config.visual_bell = {
 config.ssh_domains = wezterm.default_ssh_domains()
 config.leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.keys = {
+  -- Close the entire tab after confirmation; LEADER+w still closes one pane.
+  { key = 'w', mods = 'CTRL', action = act.CloseCurrentTab { confirm = true } },
 {
   key = 'c',
   mods = 'CTRL',
