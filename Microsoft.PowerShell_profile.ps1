@@ -24,6 +24,7 @@ Set-Alias -Name '...' -Value cdupp
 Set-Alias -Name '....' -Value cduppp
 Set-Alias -Name lg -Value lazygit
 function ff { fd . | fzf }
+Remove-Item Alias:ls -ErrorAction SilentlyContinue
 function ls { eza -lah --icons --no-git --header --group-directories-first --sort=name @args }
 
 $env:EDITOR = 'nvim'
