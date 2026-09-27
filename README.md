@@ -1,6 +1,10 @@
 # dotfiles
 Main config across all windows development.
 
+# Div
+
+Install-Module PsBash
+
 # Illustration
 
 ```text
