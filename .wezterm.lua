@@ -3,7 +3,7 @@
 -- Layouts: Shift+S save current workspace | Ctrl+r restore saved layout (fresh shells, manual)
 -- Panes: | split left/right | - split top/bottom | h/j/k/l focus | arrows resize by 5
 --        w close pane (confirm) | z zoom/unzoom | p visual pane picker
--- Tabs: t new | Ctrl+[ previous | Ctrl+] next | , rename | 1-9 activate tabs 1-9
+-- Tabs: t new | Ctrl+Left previous | Ctrl+] next | , rename | 1-9 activate tabs 1-9
 -- Output: [ copy mode; h/j/k/l move, v select, Shift+v select lines, y copy, q/Esc exit
 -- Direct: Ctrl+c copy selection/interrupt | Ctrl+v paste. Other WezTerm defaults remain enabled.
 local wezterm = require 'wezterm'
@@ -81,7 +81,8 @@ config.keys = {
   { key = 'UpArrow', mods = 'LEADER', action = act.AdjustPaneSize { 'Up', 5 } },
   { key = 'DownArrow', mods = 'LEADER', action = act.AdjustPaneSize { 'Down', 5 } },
   { key = 't', mods = 'LEADER', action = act.SpawnTab 'CurrentPaneDomain' },
-  { key = '[', mods = 'LEADER|CTRL', action = act.ActivateTabRelative(-1) },
+  { key = 'LeftArrow', mods = 'LEADER|CTRL', action = act.ActivateTabRelative(-1) },
+  { key = '[', mods = 'LEADER|CTRL', action = act.ActivateCopyMode },
   { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
   { key = ']', mods = 'LEADER|CTRL', action = act.ActivateTabRelative(1) },
   { key = ',', mods = 'LEADER', action = act.PromptInputLine {
