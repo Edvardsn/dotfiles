@@ -1,5 +1,7 @@
 # Requires the PsBash module: Install-Module -Name PsBash
 
+$env:ZELLIJ_CONFIG_DIR = Join-Path $HOME '.config\zellij'
+
 # Settings
 if (Get-Module -ListAvailable -Name PSReadLine) {
     Import-Module PSReadLine
