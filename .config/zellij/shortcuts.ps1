@@ -3,6 +3,7 @@ Write-Host ' ZELLIJ SHORTCUTS' -ForegroundColor Cyan
 Write-Host ''
 Write-Host ' Ctrl+Space enters leader mode. Esc returns to typing.'
 Write-Host ' After Ctrl+Space:'
+Write-Host '   1-9            Jump to tab and return to typing'
 Write-Host ''
 Write-Host '   h / j / k / l   Focus left / down / up / right'
 Write-Host '   h / l          At the edge: previous / next tab'

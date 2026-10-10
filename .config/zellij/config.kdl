@@ -18,6 +18,15 @@ keybinds clear-defaults=true {
     }
     // Ctrl+Space enters navigation; Esc returns to typing.
     normal {
+        bind "1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "9" { GoToTab 9; SwitchToMode "locked"; }
         bind "h" { MoveFocusOrTab "left"; }
         bind "j" { MoveFocus "down"; }
         bind "k" { MoveFocus "up"; }
@@ -370,7 +379,7 @@ default_mode "locked"
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 // 
-// default_shell "fish"
+default_shell "C:/Program Files/PowerShell/7/pwsh.exe"
  
 // Choose the path to override cwd that zellij will use for opening new panes
 // 

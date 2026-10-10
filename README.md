@@ -11,6 +11,7 @@ The config currently uses absolute paths under `C:/Users/Pette`; update those
 paths in `config.kdl` when setting up another user account.
 
 `Ctrl+Space` enters leader mode; `Esc` returns to typing. Press `F1` for help.
+After the leader, `1`–`9` jumps directly to that tab and returns to typing.
 The help text in `shortcuts.ps1` is maintained manually alongside the keybindings.
 
 # Div
