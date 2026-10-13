@@ -23,12 +23,6 @@ Install-Module PsBash
 ```text
 Windows 11
 │
-├── WezTerm
-│   ├── terminal emulator
-│   ├── panes / tabs / workspaces
-│   └── SSHMUX
-│       └── persistent remote terminal sessions
-│
 ├── Git Bash
 │   └── interactive Bash shell
 │
@@ -58,6 +52,7 @@ Windows 11
 │
 └── Native GUI apps
     ├── JetBrains
+    │   └── IdeaVim (.ideavimrc, shared by every JetBrains IDE)
     └── 1Password
     ........
 ```
