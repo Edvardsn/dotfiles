@@ -1,0 +1,45 @@
+let mapleader=" "
+set which-key
+set notimeout
+set trackactionids
+
+sethandler <C-Tab> a:vim
+sethandler <C-S-Tab> a:vim
+sethandler <C-d> a:vim
+sethandler <C-u> a:vim
+sethandler <C-h> a:vim
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+sethandler <C-l> a:vim
+sethandler <C-BS> a:vim
+
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+nmap <leader>g <Action>(ActivateCommitToolWindow)
+nmap <leader>G <Action>(ActivateVersionControlToolWindow)
+nmap <leader>T <Action>(ActivateTerminalToolWindow)
+nmap <leader>q <Action>(HideActiveWindow)
+nmap <leader>z <Action>(HideAllWindows)
+
+nmap <leader>ub <Action>(ViewToolBar)
+nmap <leader>uz <Action>(ToggleZenMode)
+nmap <leader>ud <Action>(ToggleDistractionFreeMode)
+
+nmap <leader><leader> <Action>(GotoFile)
+nmap <leader>/ <Action>(FindInPath)
+nmap <leader>s <Action>(SearchEverywhere)
+
+nmap <leader>t <Action>(ManageRecentProjects)
+nmap <C-BS> <Action>(CloseContent)
+
+map <C-Tab> <Action>(NextTab)
+map <C-S-Tab> <Action>(PreviousTab)
+imap <C-Tab> <Action>(NextTab)
+imap <C-S-Tab> <Action>(PreviousTab)
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz

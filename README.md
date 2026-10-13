@@ -51,6 +51,7 @@ Windows 11
 │
 └── Native GUI apps
     ├── JetBrains
+    │   └── IdeaVim (.ideavimrc, shared by every JetBrains IDE)
     └── 1Password
     ........
 ```

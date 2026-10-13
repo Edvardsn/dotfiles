@@ -79,6 +79,7 @@ foreach ($module in $modules) {
 $links = [ordered]@{
     'Microsoft.PowerShell_profile.ps1' = $PROFILE
     '.bashrc'                          = Join-Path $HOME '.bashrc'
+    '.ideavimrc'                       = Join-Path $HOME '.ideavimrc'
 }
 
 foreach ($name in $links.Keys) {
