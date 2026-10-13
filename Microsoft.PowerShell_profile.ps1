@@ -34,7 +34,4 @@ $env:EDITOR = 'nvim'
 if (Get-Command starship -ErrorAction SilentlyContinue) {
     Invoke-Expression (& starship init powershell)
 }
-if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
-    fastfetch
-}
 
