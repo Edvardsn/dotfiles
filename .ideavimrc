@@ -3,6 +3,17 @@ set which-key
 set notimeout
 set trackactionids
 
+" No bell
+set visualbell
+set noerrorbells
+
+" Yank to the system clipboard, paste with the IDE's paste
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+" Briefly highlight what you yanked
+set highlightedyank
+
 sethandler <C-Tab> a:vim
 sethandler <C-S-Tab> a:vim
 sethandler <C-d> a:vim
