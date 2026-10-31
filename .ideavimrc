@@ -8,3 +8,6 @@ set clipboard+=ideaput
 
 " Briefly highlight what you yanked
 set highlightedyank
+
+" Vim keys in the Project tree
+set NERDTree
